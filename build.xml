@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<project basedir=".">
+
+	<target name="create_sample_soy">
+		<property name="target" value="MapView.html" />
+		<antcall target="_create_soy" />
+	</target>
+	
+	<property name="out.dir" value="../public/javascripts/soy"/>
+	<property name="target.dir" value="../views/soy"/>
+
+
+	<target name="_create_soy">
+		<java jar="./SoyToJsSrcCompiler.jar" fork="true">
+			<arg value="--outputPathFormat" />
+			<arg value="${out.dir}/${target}.js" />
+			<arg value="--shouldProvideRequireSoyNamespaces" />
+			<arg value="${target.dir}/${target}" />
+		</java>
+	</target>
+
+</project>

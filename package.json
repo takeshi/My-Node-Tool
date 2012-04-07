@@ -1,0 +1,7 @@
+{
+ "name":"my_tool",
+ "version":"0.0.1",
+ "dependencies":{
+   "cli" : ">=0.0.1"
+ }
+}
